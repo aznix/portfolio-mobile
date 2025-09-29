@@ -45,7 +45,7 @@ body {
   position: fixed;
   top: 50%;          /* zet het element in het verticale midden */
   left: 20px;        /* een beetje van de rand af */
-  transform: translateY(-50%); /* corrigeert zodat het echt gecentreerd is */
+  transform: translateY(-50%) translateZ(0);; /* corrigeert zodat het echt gecentreerd is */
 
   width: 6px;        /* smal maken, want hij staat nu verticaal */
   height: 0;         /* start op 0 en groeit mee */
@@ -57,9 +57,7 @@ body {
   z-index: 9999;
   transition: height 0.1s linear;
   overflow: hidden;
-
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px); /* Safari */
+  will-change: height, transform;
 }
 
 .scroll-container {
