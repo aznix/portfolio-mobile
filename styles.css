@@ -177,7 +177,6 @@ body {
   border-radius: 30px;
   border: #1DCD9F 2px solid;
   box-shadow: 0 0 20px #1DCD9F;
-  transform: translateX();
   opacity: 0;
 }
 
@@ -255,7 +254,6 @@ body {
   font-size: 4.8rem;
   margin-top: 100px;
   height: 300px;
-  transform: translateY();
   opacity: 0;
 
   text-shadow: #fff 0 0 10px;
@@ -264,7 +262,6 @@ body {
 
 .project1 {
   opacity: 0;
-  transform: translateY();
   display: flex;
   justify-self: center;
   flex-direction: column;
@@ -347,7 +344,6 @@ body {
 
 .project2 {
   opacity: 0;
-  transform: translatey();
   display: flex;
   flex-direction: column;
   justify-self: center;
@@ -424,7 +420,6 @@ body {
 
 .project3 {
   opacity: 0;
-  transform: translateX();
   display: flex;
   flex-direction: column;
   column-count: 2;
@@ -556,7 +551,6 @@ body {
 
 .projectup1 {
   opacity: 0;
-  transform: translateX();
   display: flex;
   justify-content: center;
   align-items: center;
@@ -588,7 +582,6 @@ body {
 
 .projectup2 {
   opacity: 0;
-  transform: translateY();
   display: flex;
   justify-content: center;
   align-items: center;
@@ -619,7 +612,6 @@ body {
 
 .projectup3 {
   opacity: 0;
-  transform: translateX();
   display: flex;
   justify-content: center;
   align-items: center;
@@ -664,8 +656,7 @@ body {
   border: #1DCD9F 2px solid;
   border-radius: 30px;
   box-shadow: 0 0 10px #1DCD9F;
-  transform: translateY();
-  opacity: 0.7;
+  opacity: 0;
   overflow-y: hidden;
 }
 
@@ -676,7 +667,6 @@ body {
   font-family: "Special Gothic Expanded One", sans-serif;
   font-size: 4.8rem;
   margin-top: 0px;
-  transform: translateY();
   opacity: 0;
 
   text-shadow: #fff 0 0 10px;
@@ -884,10 +874,18 @@ footer {
 @media (max-width: 430px) {
   /* Particle background shrinking */
 
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+
   html, body {
-  overflow-x: hidden;     /* voorkomt horizontale scroll */
-  box-sizing: border-box; /* padding en borders tellen mee */
-  width: 100%;            /* body nooit breder dan viewport */
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
   }
 
   .hero {
@@ -1138,5 +1136,28 @@ footer {
   align-content: center;
  }
 
+
+ /* Extra */
+
+ .hero-aboutme, .hero-projects, .hero-contact {
+    max-width: 100%;
+  }
+
+  .about-text, .sub-about {
+    width: 100%;      /* nooit breder dan parent */
+    max-width: 300px; /* behoud desktop look */
+  }
+
+  .hero-projects {
+    width: 100%;
+    max-width: 390px;
+    margin: 0 auto;
+  }
+
+  .contact-main {
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+  }
 
 }
