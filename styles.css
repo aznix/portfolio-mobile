@@ -164,10 +164,11 @@ body {
 .hero-aboutme {
   display: flex;
   justify-self: center;
-   justify-content: space-between;
+  justify-content: space-between;
   align-items: center;
   background-color: #000;
   z-index: 2;
+  gap: 200px;
   position: relative;     
   width: 1300px;
   height: 600px;
@@ -238,7 +239,6 @@ body {
   justify-items: center;
   grid-template-columns: repeat(2, 1fr); /* 2 kolommen */
   gap: 20px;
-  margin-left: 200px;
   scale: 1;
 }
 
@@ -533,17 +533,17 @@ body {
 
 /* Upcoming section */
 .upcoming-title {
-  display: flex;
-  justify-self: center;
-  align-self: center;
+  display: flex; /* flex child van parent */
+  justify-content: center; /* horizontaal centreren */
+  align-items: center;     /* verticaal centreren */
+  
   font-family: "Special Gothic Expanded One", sans-serif;
   font-size: 4.8rem;
   height: 300px;
   margin: 0;
-  transform: translateY();
   opacity: 0;
-
   text-shadow: #fff 0 0 10px;
+  text-align: center; /* voor meervoudige lijnen */
 }
 
 .upcoming-projects {
@@ -680,14 +680,6 @@ body {
   opacity: 0;
 
   text-shadow: #fff 0 0 10px;
-}
-
-.main-text {
-  display: flex;
-  font-family: "Special Gothic Expanded One", sans-serif;
-  gap: 10px;
-  font-size: 3rem;
-  margin-top: 30px;
 }
 
 .contact-subtext {
@@ -847,6 +839,13 @@ label {
   transform: scale(1.05);
 }
 
+#error {
+  font-weight: bold;
+  color: red; 
+  font-size: 12px; 
+  margin-top: 5px;
+}
+
 
 /* Footer section */
 
@@ -885,8 +884,14 @@ footer {
 @media (max-width: 430px) {
   /* Particle background shrinking */
 
+  html, body {
+  overflow-x: hidden;     /* voorkomt horizontale scroll */
+  box-sizing: border-box; /* padding en borders tellen mee */
+  width: 100%;            /* body nooit breder dan viewport */
+  }
+
   .hero {
-    height: 70%;
+    height: 95%;
   }
 
   /* Interactive name */
@@ -916,29 +921,33 @@ footer {
 
   /* About me */
   .hero-aboutme {
+    display: flex;
+    margin: 0 auto;
     width: 80%;
+    margin-top: 100px;
     flex-direction: column;
     justify-content: center;
-    gap: 40px;
-    height: 50%;
-  }
- .hero-icons {
-  justify-self: center;
-  align-self: center;
-  margin-bottom: 150px;
- }
-  .hero-icons svg {
-    width: 44px;
-    height: 44px;
+    align-content: center;
+    height: 200px;
   }
 
-  .ico-java {
-    width: 24px;
-    height: 24px;
+ .hero-icons {
+  display: none;
+ }
+ 
+  .hero-icons svg {
+    width: 40px;
+    height: 40px;
   }
-  .about-text{
-    margin-top: 0px; 
-    margin-bottom: 100px;
+
+
+  .ico-java {
+    width: 20px;
+    height: 20px;
+  }
+
+  .about-text {
+    font-size: 0.8rem;
   }
 
   .sub-about {
@@ -946,7 +955,186 @@ footer {
     width: 300px;
   }
   .about {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
+
+  /* Projects */
+  .hero-projects {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .project-title {
+    font-size: 3.3rem;
+  }
+
+  .project1, .project2, .project3 {
+    margin: 0 auto;
+    width: 300px;
+  }
+
+ .project1 {
+  height: 370px;
+ }
+
+ .project2 {
+  height: 350px;
+ }
+
+ .project3 {
+    height: 430px;
+    margin-top: 60px;
+    
+ }
+
+ .project1 h1, .project2 h1, .project3 h1 {
+  margin-top: 10px;
+  font-size: 20px;
+ }
+
+ .project1 p, .project2 p, .project3 p {
+  font-size: 13px;
+ }
+
+ .project2 p, .project3 p {
+  width: 250px;
+ }
+
+ .live1-demo, .live2-demo, .live3-demo {
+   font-size: 15px;
+   width: 90px;
+ } 
+
+ .css1-stack, .css2-stack, .css3-stack {
+  width: 65px;
+ }
+
+ .html3-stack, .html2-stack, .html1-stack {
+  width: 68px;
+ }
+ 
+ .java3-stack {
+  width: 100px;
+ }
+
+ .tailwind3-stack {
+  font-size: 12px;
+  width: 110px;
+ }
+
+ /* Upcoming projects */
+ .upcoming-projects {
+  
+  display: flex;
+  flex-direction: column;
+ }
+
+ .hero-upcoming svg {
+  width: 25px;
+  height: 25px;
+
+ }
+
+ .upcoming-title {
+  margin-top: 130px;
+   font-size: 3rem;
+ }
+ 
+ .projectup1, .projectup2, .projectup3 {
+  margin: 0 auto;
+  width: 325px;
+  height: 200px;
+ }
+
+ .projectup3 {
+  margin-top: 50px;
+ }
+
+
+ .titup1, .titup2, .titup3 {
+  font-size: 1.8rem;
+ }
+
+ /* Contact form */
+ .hero-contact {
+  margin-top: 300px;
+  height: 600px;
+ }
+
+ .contact-main {
+  height: 630px;
+  width: 340px;
+  margin: 0 auto;
+ }
+
+ .contact-title {
+  font-size: 3.3rem;
+  margin: 0 auto;
+  width: 300px;
+ }
+
+
+ #name, #lastname, #email, #dropdown {
+  width: 115px;
+  height: 40px;
+ }
+
+ #email, #dropdown {
+  width: 240px;
+ }
+
+ .name1 {
+  gap: 10px;
+ }
+
+ .email-dropdown1 {
+  margin: 0 auto;
+ }
+ 
+ .message-box {
+  margin: 0 auto;
+  
+ }
+
+ #message {
+  height: 100px;
+  width: 238px;
+ }
+
+ #submit {
+  margin: 0 auto;
+  width: 238px;
+  font-size: 17px;
+  margin-bottom: 150px;
+ }
+  
+ .contact-subtext {
+  display: none;
+ }
+
+ ::placeholder {
+  font-size: 13px;
+ }
+
+ #error {
+  font-size: 10px;
+  max-width: 238px;
+ }
+
+ .hero-contact {
+  margin-top: 500px;
+ }
+
+ /* Footer  */
+ footer {
+  align-items: center;
+  height: 150px;
+ }
+ .foot-navbar {
+  width: 300px;
+  align-content: center;
+ }
+
 
 }
