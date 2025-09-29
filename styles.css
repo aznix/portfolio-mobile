@@ -948,6 +948,7 @@ footer {
 
   .about-text {
     font-size: 0.8rem;
+    width: 300px;
   }
 
   .sub-about {
@@ -961,6 +962,7 @@ footer {
   /* Projects */
   .hero-projects {
     display: flex;
+    width: 390px;
     justify-content: center;
     flex-direction: column;
   }
