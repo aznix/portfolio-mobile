@@ -971,19 +971,19 @@ footer {
 
   .project1, .project2, .project3 {
     margin: 0 auto;
-    width: 300px;
+    width: 320px;
   }
 
  .project1 {
-  height: 370px;
+  height: 390px;
  }
 
  .project2 {
-  height: 350px;
+  height: 370px;
  }
 
  .project3 {
-    height: 430px;
+    height: 450px;
     margin-top: 60px;
     
  }
