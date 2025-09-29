@@ -193,23 +193,41 @@ gsap.to(proTitle, {
 
 const project1 = document.querySelector('.project1')
 
-gsap.to(project1, {
+mm.add("(min-width: 431px)", () => {
+  gsap.to(project1, {
+    duration: 1,
+    opacity: 1,
+    x: 450,
+    scrollTrigger: {
+      trigger: project1,
+      scroller: '.scroll-container',
+      start: '-40% 10%',
+      end: '10% 10%',
+      scrub: 1,
+      toggleActions: "play reverse play reverse",
+    }
+  });
+});
+
+mm.add("(max-width: 430px)", () => {
+  gsap.to(project1, {
   duration: 1,
   opacity: 1,
-  x: 450,
+  y: -100,
   scrollTrigger: {
     trigger: project1,
     scroller: '.scroll-container',
-    start: '-40% 10%',
+    start: '-130% 10%',
     end: '10% 10%',
-    scrub: 1,
-    toggleActions: "play reverse play reverse",
+    toggleActions: "play none none reverse",
   }
-})
+  })
+});
 
 const project2 = document.querySelector('.project2')
 
-gsap.to(project2, {
+mm.add("(min-width: 431px)", () => {
+  gsap.to(project2, {
   duration: 1,
   opacity: 1,
   y: -200,
@@ -220,12 +238,29 @@ gsap.to(project2, {
     end: '-10% 10%',
     scrub: 1,
     toggleActions: "play reverse play reverse",
+    }
+  })
+});
+
+mm.add("(max-width: 430px)", () => {
+  gsap.to(project2, {
+  duration: 1,
+  opacity: 1,
+  y: -20,
+  scrollTrigger: {
+    trigger: project2,
+    scroller: '.scroll-container',
+    start: '-135% 10%',
+    end: '-10% 10%',
+    toggleActions: "play none none reverse",
   }
-})
+  })
+});
 
 const project3 = document.querySelector('.project3')
 
-gsap.to(project3, {
+mm.add("(min-width: 431px)", () => {
+  gsap.to(project3, {
   duration: 1,
   opacity: 1,
   y: -350,
@@ -237,8 +272,24 @@ gsap.to(project3, {
     end: '-55% 10%',
     scrub: 1,
     toggleActions: "play reverse play reverse",
-  }
-})
+    }
+  })  
+});
+
+mm.add("(max-width: 430px)", () => {
+  gsap.to(project3, {
+  duration: 1,
+  opacity: 1,
+  y: -20,
+  scrollTrigger: {
+    trigger: project3,
+    scroller: '.scroll-container',
+    start: '-100% 10%',
+    end: '-55% 10%',
+    toggleActions: "play none none reverse",
+    }
+  })
+});
 
 
 
@@ -246,19 +297,37 @@ gsap.to(project3, {
 
 const upcomingTitle = document.querySelector('.upcoming-title');
 
-gsap.to(upcomingTitle, {
-  duration: 1, 
-  y: -100,
-  opacity: 1,
-  scrollTrigger: {
-    trigger: upcomingTitle,
-    scroller: '.scroll-container',
-    start: '-165% 10%',
-    end: '-30% 10%',
-    scrub: 1,
-    toggleActions: "play none none reverse"
-  }
-})
+
+mm.add("(min-width: 431px)", () => {
+  gsap.to(upcomingTitle, {
+    duration: 1, 
+    y: -150,
+    opacity: 1,
+    scrollTrigger: {
+      trigger: upcomingTitle,
+      scroller: '.scroll-container',
+      start: '-165% 10%',
+      end: '-30% 10%',
+      scrub: 1,
+      toggleActions: "play none none reverse"
+    }
+  })
+});
+
+mm.add("(max-width: 430px)", () => {
+  gsap.to(upcomingTitle, {
+    duration: 1, 
+    y: -45,
+    opacity: 1,
+    scrollTrigger: {
+      trigger: upcomingTitle,
+      scroller: '.scroll-container',
+      start: '-145% 10%',
+      end: '-30% 10%',
+      toggleActions: "play none none reverse"
+    }
+  })
+});
 
 
 // Project in progress animation
@@ -267,49 +336,104 @@ const upPro1 = document.querySelector('.projectup1')
 const upPro2 = document.querySelector('.projectup2')
 const upPro3 = document.querySelector('.projectup3')
 
-gsap.to(upPro1, {
-  y: -200,
-  x: 100,
-  opacity: 1,
-  duration: 1,
-  scrollTrigger: {
-    trigger: upPro1,
-    scroller: '.scroll-container',
-    start: '-220% 10%',
-    end: '-100% 10%',
-    scrub: 1,
-    toggleActions: "play none none none"
-  }
-})
 
-gsap.to(upPro2, {
-  y: -220,
-  opacity: 1,
-  duration: 1,
-  scrollTrigger: {
+mm.add("(min-width: 431px)", () => {
+  gsap.to(upPro1, {
+    y: -200,
+    x: 100,
+    opacity: 1,
+    duration: 1,
+    scrollTrigger: {
+      trigger: upPro1,
+      scroller: '.scroll-container',
+      start: '-220% 10%',
+      end: '-100% 10%',
+      scrub: 1,
+      toggleActions: "play none none reverse"
+    }
+  })
+});
+
+
+mm.add("(max-width: 430px)", () => {
+  gsap.to(upPro1, {
+    y: -80,
+    opacity: 1,
+    duration: 1,
+    scrollTrigger: {
+      trigger: upPro1,
+      scroller: '.scroll-container',
+      start: '-140% 10%',
+      end: '-10% 10%',
+      toggleActions: "play none none reverse"
+    }
+  })
+});
+
+mm.add("(min-width: 431px)", () => {
+  gsap.to(upPro2, {
+    y: -220,
+    opacity: 1,
+    duration: 1,
+    scrollTrigger: {
+      trigger: upPro2,
+      scroller: '.scroll-container',
+      start: '-220% 10%',
+      end: '-100% 10%',
+      scrub: 1,
+      toggleActions: "play none none reverse"
+    }
+  })
+});
+
+
+mm.add("(max-width: 430px)", () => {
+  gsap.to(upPro2, {
+    y: -30,
+    opacity: 1,
+    duration: 1,
+    scrollTrigger: {
     trigger: upPro2,
     scroller: '.scroll-container',
-    start: '-220% 10%',
+    start: '-170% 10%',
     end: '-100% 10%',
-    scrub: 1,
     toggleActions: "play none none reverse"
-  }
-})
+    }
+  })
+});
 
-gsap.to(upPro3, {
-  y: -200,
-  x: -100,
-  opacity: 1,
-  duration: 1,
-  scrollTrigger: {
-    trigger: upPro3,
-    scroller: '.scroll-container',
-    start: '-220% 10%',
-    end: '-100% 10%',
-    scrub: 1,
-    toggleActions: "play none none reverse"
-  }
-})
+mm.add("(min-width: 431px)", () => {
+  gsap.to(upPro3, {
+    y: -200,
+    x: -100,
+    opacity: 1,
+    duration: 1,
+    scrollTrigger: {
+      trigger: upPro3,
+      scroller: '.scroll-container',
+      start: '-220% 10%',
+      end: '-100% 10%',
+      scrub: 1,
+      toggleActions: "play none none reverse"
+    }
+  })
+});
+
+
+mm.add("(max-width: 430px)", () => {
+  gsap.to(upPro3, {
+    y: -30,
+    opacity: 1,
+    duration: 1,
+    scrollTrigger: {
+      trigger: upPro3,
+      scroller: '.scroll-container',
+      start: '-260% 10%',
+      end: '-100% 10%',
+      toggleActions: "play none none reverse"
+    }
+  })
+});
 
 // Project in progress box shadows
 
@@ -346,22 +470,40 @@ gsap.to('.upcoming-projects svg', {
   duration: 0.8
 })
 
-// Contact title animation
+// // Contact title animation
 
-gsap.to('.contact-title', {
-  duration: 1,
-  opacity: 1,
-  y: -340,
-  scrollTrigger: {
-    trigger: '.contact-title',
-    scroller: '.scroll-container',
-    start: '-310% 70%',
-    end: '-20% 60%',
-    toggleActions: 'play none none reverse'
-  }
-})
+mm.add("(min-width: 431px)", () => {
+  gsap.to('.contact-title', {
+    duration: 1,
+    opacity: 1,
+    y: -340,
+    scrollTrigger: {
+      trigger: '.contact-title',
+      scroller: '.scroll-container',
+      start: '-310% 70%',
+      end: '-20% 60%',
+      toggleActions: 'play none none reverse'
+    }
+  })
+});
 
-// Contact form box shadow animation
+
+mm.add("(max-width: 430px)", () => {
+  gsap.to('.contact-title', {
+    duration: 1,
+    opacity: 1,
+    y: -340,
+    scrollTrigger: {
+      trigger: '.contact-title',
+      scroller: '.scroll-container',
+      start: '-420% 70%',
+      end: '-20% 60%',
+      toggleActions: 'play none none reverse'
+    }
+  })
+});
+
+// // Contact form box shadow animation
 
 gsap.to('.contact-main', {
   duration: 1,
@@ -371,22 +513,41 @@ gsap.to('.contact-main', {
   boxShadow: '0 0 30px #1DCD9F'
 })
 
-// Contact form animation
+// // Contact form animation
 
-gsap.to('.contact-main', {
-  duration: 1,
-  opacity: 1,
-  y: -700,
-  scrollTrigger: {
-    trigger: '.contact-main',
-    scroller: '.scroll-container',
-    start: '-120% 70%',
-    end: '-30% 60%',
-    toggleActions: 'play none none reverse'
-  }
-})
 
-// Contact sub text animation
+mm.add("(min-width: 431px)", () => {
+  gsap.to('.contact-main', {
+    duration: 1,
+    opacity: 1,
+    y: -700,
+    scrollTrigger: {
+      trigger: '.contact-main',
+      scroller: '.scroll-container',
+      start: '-120% 70%',
+      end: '-30% 60%',
+      toggleActions: 'play none none reverse'
+    }
+  })
+});
+
+
+mm.add("(max-width: 430px)", () => {
+  gsap.to('.contact-main', {
+    duration: 1,
+    opacity: 1,
+    y: -300,
+    scrollTrigger: {
+      trigger: '.contact-main',
+      scroller: '.scroll-container',
+      start: '-20% 70%',
+      end: '0% 60%',
+      toggleActions: 'play none none reverse'
+    }
+  })
+});
+
+// // Contact sub text animation
 
 gsap.to('.hire-sub', {
   duration: 1, 
@@ -501,7 +662,7 @@ if (error) { // If any error exists
 // Footer button redirections if clicked
 
 document.getElementById('about-foot').addEventListener('click', () => {
-  const contactSection = document.querySelector('.hero-aboutme');
+  const contactSection = document.querySelector('.about-text');
   contactSection.scrollIntoView({ behavior: 'smooth' });
 });
 
